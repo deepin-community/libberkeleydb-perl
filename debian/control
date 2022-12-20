@@ -1,0 +1,22 @@
+Source: libberkeleydb-perl
+Section: perl
+Priority: optional
+Maintainer: Marco d'Itri <md@linux.it>
+Standards-Version: 4.4.0.1
+Rules-Requires-Root: no
+Build-Depends: perl (>= 5.8), debhelper-compat (= 12), libdb-dev
+Vcs-Git: https://salsa.debian.org/md/libberkeleydb-perl.git
+Vcs-Browser: https://salsa.debian.org/md/libberkeleydb-perl
+Homepage: https://github.com/pmqs/BerkeleyDB
+
+Package: libberkeleydb-perl
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${perl:Depends}
+Description: use Berkeley DB databases from Perl
+ Provides BerkeleyDB::Hash, BerkeleyDB::Btree etc. classes that allow
+ access to Berkeley DB databases as if they were normal Perl hash
+ tables.
+ .
+ Supports all the features of Berkeley DB such as sharing cache and
+ lock memory between processes, logging and transactions.

@@ -1,0 +1,2 @@
+version=3
+https://metacpan.org/release/BerkeleyDB/ .*/BerkeleyDB-(\d[\d\.]+)\.tar\.[gx]z$

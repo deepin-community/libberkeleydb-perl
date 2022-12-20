@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+D := $(CURDIR)/debian/libberkeleydb-perl
+
+ARCHLIB := $(shell perl -MConfig -e 'print $$Config{vendorarch}')
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -f $D$(ARCHLIB)/mkconsts.pl $D$(ARCHLIB)/scan.pl
+

@@ -1,0 +1,17 @@
+Description: accept as valid different patchlevels
+ Without this change the compiled BerkeleyDB.xs will depend on the exact
+ patchlevel version of the libdb it was built with.
+Bug-Debian: http://bugs.debian.org/290988
+Forwarded: no
+
+--- a/BerkeleyDB.xs
++++ b/BerkeleyDB.xs
+@@ -6167,7 +6167,7 @@ BOOT:
+     (void)db_version(&Major, &Minor, &Patch) ;
+     /* Check that the versions of db.h and libdb.a are the same */
+     if (Major != DB_VERSION_MAJOR || Minor != DB_VERSION_MINOR
+-		|| Patch != DB_VERSION_PATCH)
++		)
+         croak("\nBerkeleyDB needs compatible versions of libdb & db.h\n\tyou have db.h version %d.%d.%d and libdb version %d.%d.%d\n",
+                 DB_VERSION_MAJOR, DB_VERSION_MINOR, DB_VERSION_PATCH,
+                 Major, Minor, Patch) ;
